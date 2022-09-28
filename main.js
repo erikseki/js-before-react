@@ -7,49 +7,48 @@ const user = {
   }, 
 };
 
-// Desestruturação - Remover parte do objeto para uma variável a parte, ou seja...
-
-// ao invés disso - const address = user.address, eu consigo fazer...
-const {address} = user
-
-// conseguimos também trocar o nome das keys fazendo (idade : age) na variável e imprimindo como 'age' ao invés de idade
-const {idade : age} = user
-
-// document.body.innerText = JSON.stringify(Object.entries({age})); 
+// Desestruturação - Remover parte do objeto para uma variável a parte
 
 
-// conseguimos adicionar uma nova chave com ou sem valores dentro da variável, contudo a preferencia do resultado sempre será no que estiver no objeto (escopo)
-const {nickname = 'seki'} = user
+// Rest Operator na Desestruturação
 
+/* 
+mostrando todos os valores menos o name (apenas o resto dos objetos)
 
-/* a Desestruturação também é utilizado nas funções. 
-
-
-function mostrarIdade(user) {
-  return user.idade;
-}
-
-ou adicionar dentro do parâmetro um '{}' para um novo objeto 
-
-
-function mostrarIdade({ idade}) {
-  return idade;
-}
-
-ou classificar dentro do parâmetro as chaves e valores quando não há nenhum
-
-
-function mostrarIdade({ idade = 24}) {
-  return idade;
-}
-
-em qualquer lugar que lidamos com objetos seja parametros de funções, variáveis, construtores e métodos de classes. 
-
+const {name, ...rest} = user
+document.body.innerText = JSON.stringify(rest)
 
 */
 
 
-document.body.innerText = mostrarIdade(user)
+// REST OPERATOR EM ARRAYS 
+
+
+/* 
+
+const array = [1,2,3,4,5,6,7,8,9,10];
+
+podemos fazer ...
+
+const first = array[0];
+const second = array[1];
+
+ou 
+
+const [first,, third, ...rest ] = array  
+
+*/
+
+
+const array = [1,2,3,4,5,6,7,8,9,10];
+
+const [first, , third, ...rest ] = array
+
+document.body.innerText = JSON.stringify({first, third, rest});
+
+
+
+
 
 
 // document.body.innerText = JSON.stringify(Object.entries({mostrarIdade}));
