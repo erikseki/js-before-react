@@ -4,3 +4,5 @@ Restruturação do Js e suas principais funcionalidades importantes do JavaScrip
 - Nullish Coalescing Operator
 - Objetos
 - Desestruturação 
+- Rest Operator 
+- Short Syntax
