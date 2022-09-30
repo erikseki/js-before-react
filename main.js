@@ -1,28 +1,44 @@
 
-// Short Syntax em Objetos
+// Optional Chaining 
 
-const name = 'Erik';
-const age = '22';
-
-/*
 const user = {
-  name : name,
-  idade : idade,
-}
+  name:'erik',
+  age : '22',
+  address :{
+      street:'Rua Teste',
+      number : '176',
+      zip : {
+        //code : '12345678',
+        city : 'São Paulo'
+      },
+      showFullAddress(){
+        return 'ok';
+      }
+  }, 
+};
 
-ou Short Syntax
+// maneira correta utilizando o Optional Chaining com Nullish Coalescing 
+// document.body.innerText = user.address?.zip?.code ?? 'Não Informado';
+
+
+// caso eu tenha uma função dentro do objeto e "caso" ele não exista, eu consigo usar o Optional para tratar 
+// o erro no console assim :
+// document.body.innerText = user.address.showFullAddress?.();
+
+
+// const key = 'uma-chave-que-não-exista';
+// document.body.innerText = user?.[key]
+
+
+
+
+
+
+/* Utilizando o If para ver se há chaves e valores. Tratando-se de uma syntax muito grande (não indicado)
+document.body.innerText = 
+user.address ? user.address.zip ? user.address.zip.code : 'Não Informado'
+ : 'Não Informado'
 */
-
-const user = {
-  name,
-  age,
-}
-
-
-
-document.body.innerText = JSON.stringify({user});
-
-
 
 
 
