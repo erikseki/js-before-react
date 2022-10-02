@@ -6,4 +6,5 @@ Restruturação do Js e suas principais funcionalidades importantes do JavaScrip
 - Desestruturação 
 - Rest Operator 
 - Short Syntax
-- Optional Chaining
+- Optional Chaining 
+- Métodos de Array
