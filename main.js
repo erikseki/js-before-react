@@ -4,68 +4,93 @@
 const array = [1 ,2, 3, 4, 5];
 
 
-/* FORMAS DE PERCORRER O ARRAY (for, forEach & map); 
+/* 
+Método Filter
+O filter n pode alterar os valores, ele so filtra os vetores.
 
-for (const i of array){
-  document.body.innerText += i;
-}
 
-array.forEach(item => {
-  document.body.innerText += item;
+const novoArray = array.filter(item => item % 2 == 0);
+
+-------------------------------------
+
+usando .filter e .map 
+
+const novoArray = array
+  .filter(item => item % 2 !== 0)
+  .map(item => item * 15)
+
+-------------------------------------
+
+método .every  
+condição se todos os valores do array são números ( true ou false )
+
+duas maneiras de usar
+
+const todosItensSaoNumeros = array.every(item => typeof item == 'number');
+
+const todosItensSaoNumeros = array.every(item => {
+  return typeof item == 'number'});
+
+------------------------------------
+
+método .some
+condição de pelomenos um dos arrays obter 
+
+const peloMenosUmItemNaoEUmNumero = array.some(item => {
+  return typeof item !== 'number';
 })
+
+----------------------------------- 
+
+método .find 
+condição de encontrar o item do array 
+ex: primeiro numero par do array 
+se n tiver nenhum valor ele retorna undefined* 
+
+const par = array.find(item => item % 2 == 0);
 
 -----------------------------------
 
-A diferença do .map é que eu consigo fazer um retorno dentro do Map (do forEach não dá)
-ex : pegar o array e multiplica-los 
+método findIndex é igual porém ele vai retornar o índice do valor que a condição exigir 
+ex : retornar o valor par do array que está no índice 1 
 
-usando o forEach dando Undefined  
+const par = array.findIndex(item => item % 2 == 0);
 
-const novoArray = array.forEach(item => {
-  return item * 2;
-})
+-----------------------------------
 
-document.body.innerText = JSON.stringify(Object.entries({novoArray}));
+método .reduce 
+muito utilizado quando queremos pegar o array e criar uma nova estrutura de dados (criar algo novo)
+restruturação do array*
 
-----------------------------------
+ex : fazendo a soma dos array = 15 
 
-Maneira para não sair undefined com o forEach 
+valor inicial = 0
+objeto que está criando = acc (accumulator)
+cada info do array = item
 
-const novoArray = [];
-
-array.forEach(item => {
-  novoArray.push(item*2);
-})
-
----------------------------------
-
-usando o Map 
-O map sempre vai retornar um vetor(array) com o mesmo tamanho do vetor original  
-
-
-const novoArray = array.map(item => {
- return item * 2;
-})
-
-document.body.innerText = JSON.stringify(Object.entries({novoArray}));
-
---------------------------------
-
-multiplicando os pares por 10 usando condicionais 
-
-const novoArray = array.map(item => {
-  if(item % 2 == 0) {
-    return item * 10;
-  }
-  return item;
-})
-
-métodos
-map, filter, every, some, find, findIndex, reduce.
-
+valor do accumulator, o item do array e undefined 
+deu undefined porq o acc espera um novo valor a cada iteração (return acc;)
+e para fazer a soma a cada valor (acc + item;) 
+e declarar a variável para o resultado 
 */
 
-document.body.innerText = JSON.stringify(Object.entries({novoArray}));
+
+const soma = array.reduce((acc, item) => {
+  document.body.innerText += acc + ',' + item + '---';
+
+  return acc + item;
+}, 0)
+
+
+document.body.innerText = JSON.stringify(soma);
+
+
+
+
+/*
+métodos
+map, filter, every, some, find, findIndex, reduce.
+*/
 
 
 
