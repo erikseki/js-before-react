@@ -8,3 +8,4 @@ Restruturação do Js e suas principais funcionalidades importantes do JavaScrip
 - Short Syntax
 - Optional Chaining 
 - Métodos de Array
+- Template Literals
