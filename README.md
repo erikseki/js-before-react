@@ -10,3 +10,4 @@ Restruturação do Js e suas principais funcionalidades importantes do JavaScrip
 - Métodos de Array
 - Template Literals
 - Promises 
+- Importações e Exportações do Javascript
