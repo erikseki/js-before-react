@@ -9,3 +9,4 @@ Restruturação do Js e suas principais funcionalidades importantes do JavaScrip
 - Optional Chaining 
 - Métodos de Array
 - Template Literals
+- Promises 
